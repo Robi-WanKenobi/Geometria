@@ -1,26 +1,38 @@
 package Geometria;
 
 
-import java.util.ArrayList;
-import java.util.List;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+
+import java.util.*;
+
+
 
 public class App
 {
     public static void main( String[] args )
     {
+        BasicConfigurator.configure();
+        final Logger log = Logger.getLogger("Main");
         Controlador miFiguras = new Controlador();
 
-        Figura f1 = new Rectangle(4,3);
-        Figura f2 = new Square(2);
-        Figura f3 = new Circle(4);
-        Figura f4 = new Triangle(2,6);
+        miFiguras.addFigura(new Rectangle(4,3));
+        miFiguras.addFigura(new Square(2));
+        miFiguras.addFigura(new Circle(4));
+        miFiguras.addFigura(new Triangle(2,6));
+        miFiguras.addFigura(new Trapeze(3,4,2));
+        miFiguras.addFigura(new Pentagon(2,4));
 
-        miFiguras.addFigura(f1);
-        miFiguras.addFigura(f2);
-        miFiguras.addFigura(f3);
-        miFiguras.addFigura(f4);
+        for (int i = 0; i<miFiguras.getList().size(); i++){
+            System.out.println("Figura: " +miFiguras.getList().get(i).getClass().getSimpleName()+ " | Area: " +miFiguras.getList().get(i).area());
+        }
 
-        double sumaDeAreas = miFiguras.sumarAreas();
-        System.out.println("La suma total de las áreas es: " +sumaDeAreas);
+        System.out.println("\nLa suma total de las áreas es: " +miFiguras.sumarAreas()+ "\n");
+
+        log.info("Lista ordenada por áreas decrecientes:\n");
+        for (int i = 0; i<miFiguras.getListSorted().size(); i++){
+            System.out.println("Figura: " +miFiguras.getListSorted().get(i).getClass().getSimpleName()+
+                    " | Area: " +miFiguras.getListSorted().get(i).area());
+        }
     }
 }

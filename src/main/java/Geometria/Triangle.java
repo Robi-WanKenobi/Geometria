@@ -3,7 +3,7 @@ package Geometria;
 /**
  * Created by Roberto on 22/02/2017.
  */
-public class Triangle implements Figura {
+public class Triangle extends BasicFigura{
 
     private double b, h;
 
@@ -14,6 +14,7 @@ public class Triangle implements Figura {
     }
 
     public double area(){
+
         return ((this.b*this.h)/2);
     }
 }

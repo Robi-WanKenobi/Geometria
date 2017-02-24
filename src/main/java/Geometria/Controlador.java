@@ -1,17 +1,15 @@
 package Geometria;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by Roberto on 22/02/2017.
- */
+
 public class Controlador {
 
     private List<Figura> figuras;
 
     public Controlador(){
-
         figuras = new ArrayList<Figura>();
     }
 
@@ -27,4 +25,14 @@ public class Controlador {
         }
         return result;
     }
+
+    public List<Figura> getList() {
+        return figuras;
+    }
+
+    public List<Figura> getListSorted(){
+        Collections.sort(this.figuras, Collections.reverseOrder());
+        return figuras;
+    }
+
 }
