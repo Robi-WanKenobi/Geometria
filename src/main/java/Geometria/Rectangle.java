@@ -15,6 +15,9 @@ public class Rectangle extends BasicFigura{
         this.l2 = l2;
     }
 
+    public Rectangle() {
+    }
+
     public double area(){
         return (this.l1*this.l2);
     }

@@ -12,6 +12,9 @@ public class Pentagon extends BasicFigura {
         this.ap = ap;
     }
 
+    public Pentagon() {
+    }
+
     public double area() {
         return ((5*l*ap)/2);
     }

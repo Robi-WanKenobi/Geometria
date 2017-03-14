@@ -13,6 +13,9 @@ public class Triangle extends BasicFigura{
         this.h = h;
     }
 
+    public Triangle() {
+    }
+
     public double area(){
 
         return ((this.b*this.h)/2);

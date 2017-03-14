@@ -9,7 +9,8 @@ public class Controlador {
 
     private List<Figura> figuras;
 
-    public Controlador(){
+    public Controlador()
+    {
         figuras = new ArrayList<Figura>();
     }
 

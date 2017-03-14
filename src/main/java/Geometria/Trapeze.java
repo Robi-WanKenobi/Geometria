@@ -12,6 +12,10 @@ public class Trapeze extends BasicFigura{
         this.b = b;
         this.h = h;
     }
+
+    public Trapeze() {
+    }
+
     public double area() {
         return (((a+b)*h)/2);
     }

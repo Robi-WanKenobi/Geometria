@@ -15,6 +15,7 @@ public class App
         BasicConfigurator.configure();
         final Logger log = Logger.getLogger("Main");
         Controlador miFiguras = new Controlador();
+        ShapeFactory figureFactory = new ShapeFactory();
 
         miFiguras.addFigura(new Rectangle(4,3));
         miFiguras.addFigura(new Square(2));
@@ -22,6 +23,9 @@ public class App
         miFiguras.addFigura(new Triangle(2,6));
         miFiguras.addFigura(new Trapeze(3,4,2));
         miFiguras.addFigura(new Pentagon(2,4));
+        Circle fcircle = (Circle) figureFactory.getFigura("circle");
+        fcircle.setR(6);
+        miFiguras.addFigura(fcircle);
 
         for (int i = 0; i<miFiguras.getList().size(); i++){
             System.out.println("Figura: " +miFiguras.getList().get(i).getClass().getSimpleName()+ " | Area: " +miFiguras.getList().get(i).area());
